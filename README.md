@@ -1,5 +1,5 @@
 # java_SimpleDateFormat线程不安全问题及解决方法
-[Web Site](http://blog.csdn.net/suifeng3051/article/details/25226027/)
+[转自CSDN](http://blog.csdn.net/suifeng3051/article/details/25226027/)
 Java SimpleDateFormat 是线程不安全的，当在多线程环境下使用一个DateFormat的时候是有问题的，如下面的例子：
 
 
