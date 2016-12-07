@@ -1,4 +1,5 @@
-# java_SimpleDateFormat[转载自]（http://blog.csdn.net/suifeng3051/article/details/25226027）
+# java_SimpleDateFormat线程不安全问题及解决方法
+[Web Site](http://blog.csdn.net/suifeng3051/article/details/25226027/)
 Java SimpleDateFormat 是线程不安全的，当在多线程环境下使用一个DateFormat的时候是有问题的，如下面的例子：
 
 
@@ -132,4 +133,4 @@ Java SimpleDateFormat 是线程不安全的，当在多线程环境下使用一�
       }
     }
 解决方法二：使用线程安全的DateFormat，在Github上已经有人写了一个线程安全的，我们可以直接拿来用，请点击下面链接查看
-[打开链接]（https://gist.github.com/pablomoretti/9748230）
+[github](https://gist.github.com/pablomoretti/9748230/)
