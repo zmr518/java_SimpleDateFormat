@@ -12,8 +12,8 @@
 而项目中日类控件代码片断如下:
     
     public final class DateUtil {
-      private static final SimpleDateFormat YYYYMMDD_FORMAT = new java.text.SimpleDateFormat("yyyyMMdd");
-      public static java.util.Date getUtilDateByShortStr(String datestr) {
+      private static final SimpleDateFormat YYYYMMDD_FORMAT = new SimpleDateFormat("yyyyMMdd");
+      public static Date getUtilDateByShortStr(String datestr) {
               try {
                   return YYYYMMDD_FORMAT.parse(datestr);
               } catch (ParseException e) {
@@ -27,9 +27,9 @@
 解决方法一：把SimpleDateFormat作为局部变量而非全局变量
 ```
         public final class DateUtil {
-          public static java.util.Date getUtilDateByShortStr(String datestr) {
+          public static Date getUtilDateByShortStr(String datestr) {
                   try {
-                      SimpleDateFormat YYYYMMDD_FORMAT = new java.text.SimpleDateFormat("yyyyMMdd");
+                      SimpleDateFormat YYYYMMDD_FORMAT = new SimpleDateFormat("yyyyMMdd");
                       return YYYYMMDD_FORMAT.parse(datestr);
                   } catch (ParseException e) {
                       throw new SasException("error.dateformate");
@@ -41,8 +41,8 @@
 解决方法二：把全局变量加synchronized
 ```
     public final class DateUtil {
-           private static final SimpleDateFormat YYYYMMDD_FORMAT = new java.text.SimpleDateFormat("yyyyMMdd");
-           public static java.util.Date getUtilDateByShortStr(String datestr) {
+           private static final SimpleDateFormat YYYYMMDD_FORMAT = new SimpleDateFormat("yyyyMMdd");
+           public static Date getUtilDateByShortStr(String datestr) {
                    try {
                        synchronized (YYYYMMDD_FORMAT) {
                             return YYYYMMDD_FORMAT.parse(datestr);
